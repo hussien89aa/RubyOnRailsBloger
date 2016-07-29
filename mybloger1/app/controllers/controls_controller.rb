@@ -18,4 +18,11 @@ class ControlsController < ApplicationController
       # @user = User.new 
     end
   end
+
+  def logout
+
+session[:user]=nil
+ redirect_to root_url, notice: "Thank you for signing up  "
+      
+  end
 end

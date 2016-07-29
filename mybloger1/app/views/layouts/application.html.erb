@@ -25,11 +25,13 @@
        <li> 
       	<%= link_to 'Article', "/articles" %> </li>
       <li> 
-      	<%= link_to 'Login', "/controls/login" %> </li>
+      	<%= link_to 'Login', "/controls/login"  if  session[:user].nil? %> </li>
       <li> 
       	<%= link_to 'Profile', "/users/#{session[:user] }"   if  !session[:user].nil? %> </li>
       	 <li> 
       		<%= link_to 'Manage', "/users"   if  !session[:user].nil? %> </li>
+ <li> 
+      		<%= link_to 'Log out', "/controls/logout"   if   !session[:user].nil? %> </li>
 
     </ul>
   </div>
