@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+ 
+<div class="panel panel-default">
+  <div class="panel-heading"><p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p></div>
+  <div class="panel-body"> 
+
+<p>
+  <strong>Body:</strong>
+  <%= @article.body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @article.user.email %>
+</p>
+
+      <div class="panel panel-default">
+  <div class="panel-body"> 
+<table class="table">
+  <thead>
+    <tr>
+      <th> visitor comments</th>
+    </tr>
+  </thead>
+ <tbody>
+    <% @article.comments.each do |comment| %>
+      <tr>
+        <td>
+    
+          <%= comment.body %>
+     
+        </td>
+           <td><%# comment.user.email %></td>
+       </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+     </div>
+</div>
+</div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">add comment</div>
+  <div class="panel-body"> 
+
+<%= form_for([@article,@article.comments.build]) do |f| %>
+ 
+
+  <div class="field">
+ 
+    <%= f.text_area :body ,:class => 'form-control' %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit  class:"btn btn-success" %>
+  </div>
+<% end %>
+</div>
+</div>
+ 
+
+
+
+<%= link_to 'Edit', edit_article_path(@article) ,:class=>"btn btn-info"%> |
+<%= link_to 'Back', articles_path ,:class=>"btn btn-info" %>
+   </div>
+</div>

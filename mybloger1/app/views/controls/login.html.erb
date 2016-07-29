@@ -1,0 +1,26 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">Please sign in</div>
+  <div class="panel-body"> 
+
+   
+<%= form_tag( :url => { :action => "login" }, method: "post" ) do  %>
+  
+
+  <div class="field">
+    <%= label_tag :email  %>
+    <%= text_field_tag :email , '', :class => "form-control"    %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :password %>
+    <%= password_field_tag :password , '', :class => "form-control"  %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Sign in" ,class:"btn btn-lg btn-primary btn-block"%>
+  </div>
+<% end %>
+<%= link_to 'New User', "/users/new" , :class=>"btn btn-success" %>
+ </div>
+</div>

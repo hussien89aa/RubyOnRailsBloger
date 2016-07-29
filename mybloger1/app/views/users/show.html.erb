@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+ 
+<div class="panel panel-default">
+  <div class="panel-heading">Profile</div>
+  <div class="panel-body"> 
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+</div>
+</div>
